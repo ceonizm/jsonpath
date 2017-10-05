@@ -98,7 +98,7 @@ class JsonPath {
       for ($i=$start; $i<$end; $i+=$step)
          $this->trace($i.";".$expr, $v, $path);
    }
-   function evalx($x, $v, $vname) {
+   function evalx($x, $v, $vname="") {
       $name = "";
       $expr = preg_replace(array("/\\$/","/@/"), array("\$this->obj","\$v"), $x);
       $res = eval("\$name = $expr;");
